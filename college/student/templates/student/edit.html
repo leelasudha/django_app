@@ -1,0 +1,32 @@
+{% extends 'student/navbar.html' %}
+
+{% block body %}
+<body>
+	<center>
+		<div class='container'>
+		<h2 class= 'bg bg-success'>Edit {{data.First_name}} details</h2>
+		<form action="{% url 'edit' data.id %}" method = "POST">
+			{% csrf_token %}
+			First Name: <input type="text" name="fname" class= 'form-control' value = {{data.First_name}}><br>
+			Last  Name: <input type="text" name="lname" class= 'form-control' value= {{data.Last_name}}><br>
+			<!--<label>Gender:</label>
+			<label><input type="radio" name="f" class= 'form-control'>Female</label>
+			<label><input type="radio" name="m" class= 'form-control'>Male</label><br> -->
+			Age: <input type="integer" name="age" class= 'form-control' value={{data.Age}}><br>
+			Email: <input type="email" name="email" class= 'form-control' value={{data.Email}}><br>
+			<label>Department:</label>
+			<select name= 'branch'class= 'form-control' value= {{data.Branch}}>
+				<option>{{data.Branch}}</option>>
+				<option>ECE</option>
+				<option>CSE</option>
+				<option>EEE</option>
+				<option>MECH</option>
+				<option>EIE</option>
+				<option>IT</option>
+			</select><br><br>
+			<input type="submit" name="submit" value='update' class= 'form-control btn btn-success'>
+		</form>
+		</div>
+	</center>
+{% endblock %}
+

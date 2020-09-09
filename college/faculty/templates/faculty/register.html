@@ -1,0 +1,24 @@
+{% extends 'student/navbar.html' %}
+
+{% block body %}
+<body>
+	<center>
+		<div class='container'>
+		<h2 class= 'bg bg-success'>Faculty Registration Page</h2>
+		<form action="{% url 'registerFaculty' %}" method = "POST">
+			{% csrf_token %}
+			First Name: <input type="text" name="fname" class= 'form-control'><br>
+			Last  Name: <input type="text" name="lname" class= 'form-control'><br>
+			Age: <input type="integer" name="age" class= 'form-control'><br>
+			Email: <input type="email" name="email" class= 'form-control'><br>
+			Join Date: <input type="date" name="date" class='form-control'><br>
+			Qualification:<input type="text" name="qualification" class='form-control'>
+			Mobile:<input type="text" name="mobile" class='form-control'>
+			<br>
+			Department:<input type="text" name="department" class="form-control">
+			<input type="submit" name="submit" value = "Register" class = "form-control btn btn-success">
+		</form>
+		</div>
+	</center>
+{% endblock %}
+

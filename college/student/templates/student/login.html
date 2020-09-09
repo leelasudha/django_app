@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+</head>
+<body>
+<center>
+<form action="{% url 'login'%}" method="POST">
+	{% csrf_token%}
+	Username:<input type="text" name=""><br><br>
+	Password:<input type="password" name=""><br><br>
+	<input type="submit" name="submit"><br><br>
+	<br><a href="{% url 'forgotpwd'%}">Forget Password?</a>
+</form>
+</center>
+</body>
+</html>

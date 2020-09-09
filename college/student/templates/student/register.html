@@ -1,20 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Register</title>
-</head>
+{% extends 'student/navbar.html' %}
+
+{% block body %}
 <body>
 	<center>
-		<h2>Register Page</h2>
+		<div class='container'>
+		<h2 class= 'bg bg-success'>Student Registration Page</h2>
 		<form action="{% url 'register' %}" method = "POST">
 			{% csrf_token %}
-			First Name: <input type="text" name="fname"><br>
-			Last  Name: <input type="text" name="lname"><br>
-			<label>Gender:</label>
-			<label><input type="radio" name="f">Female</label>
-			<label><input type="radio" name="m">Male</label><br>
+			First Name: <input type="text" name="fname" class= 'form-control'><br>
+			Last  Name: <input type="text" name="lname" class= 'form-control'><br>
+			<!--<label>Gender:</label>
+			<label><input type="radio" name="f" class= 'form-control'>Female</label>
+			<label><input type="radio" name="m" class= 'form-control'>Male</label><br> -->
+			Age: <input type="integer" name="age" class= 'form-control'><br>
+			Email: <input type="email" name="email" class= 'form-control'><br>
 			<label>Department:</label>
-			<select name= 'department'>
+			<select name= 'department'class= 'form-control'>
+				<option>--select--</option>
 				<option>ECE</option>
 				<option>CSE</option>
 				<option>EEE</option>
@@ -22,8 +24,10 @@
 				<option>EIE</option>
 				<option>IT</option>
 			</select><br><br>
-			<button>submit</button>
+			<input type="submit" name="submit" value="Register" class= 'form-control btn btn-success'>
+			
 		</form>
+		</div>
 	</center>
-</body>
-</html>
+{% endblock %}
+
